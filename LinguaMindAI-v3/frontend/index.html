@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="LinguaMind AI — personalized language learning powered by your mistakes.">
+<title>LinguaMind AI — V3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0e1b;--elev:#171728;--card:#1c1c33;--text:#eeeae1;--muted:#9b96ae;--gold:#d8a94e;--teal:#33d6c0;--coral:#ff6e52;--border:rgba(238,234,225,.1)}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:Inter,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button{cursor:pointer}.wrap{max-width:1160px;margin:auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--border);background:rgba(14,14,27,.9);backdrop-filter:blur(12px)}.logo{font:600 1.35rem Fraunces}.logo em{color:var(--gold)}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:.85rem}.navlinks button{background:none;border:0;color:inherit}.badge{font:500 .68rem JetBrains Mono;color:var(--teal);border:1px solid rgba(51,214,192,.35);padding:4px 9px;border-radius:20px}
+.hero{padding:78px 0 58px}.eyebrow{font:500 .7rem JetBrains Mono;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}.hero h1{font:400 clamp(2.5rem,6vw,4.5rem)/1.03 Fraunces;max-width:900px}.hero h1 i{color:var(--teal)}.hero p{max-width:650px;color:var(--muted);margin-top:22px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.btn{border:1px solid transparent;border-radius:9px;padding:12px 18px;font-weight:700}.primary{background:var(--gold);color:#161608}.ghost{background:transparent;border-color:var(--border);color:var(--text)}.danger{border-color:rgba(255,110,82,.4);color:var(--coral);background:transparent}
+.strip{border-block:1px solid var(--border);padding:15px 0;overflow:auto}.strip .wrap{display:flex;gap:24px;white-space:nowrap;color:var(--muted);font-size:.8rem}.dot{display:inline-block;width:6px;height:6px;background:var(--teal);border-radius:50%;margin-right:7px}
+.section{padding:42px 0}.section h2{font:400 2rem Fraunces;margin-bottom:7px}.section>div>p{color:var(--muted);margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}.metric{font:500 1.8rem JetBrains Mono;color:var(--gold)}.label{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em}.progress{height:8px;background:var(--elev);border-radius:5px;overflow:hidden;margin:10px 0}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--coral),var(--gold),var(--teal));width:0}
+.tabs{display:flex;gap:5px;flex-wrap:wrap;border-bottom:1px solid var(--border);margin-bottom:18px}.tab{background:none;border:0;color:var(--muted);padding:11px 14px;border-bottom:2px solid transparent}.tab.active{color:var(--text);border-bottom-color:var(--gold)}.panel{display:none}.panel.active{display:block}.chat{height:320px;overflow:auto;display:flex;flex-direction:column;gap:12px;margin-bottom:14px}.msg{max-width:82%;padding:11px 14px;border-radius:12px;font-size:.9rem}.msg.user{align-self:flex-end;background:rgba(216,169,78,.14);border:1px solid rgba(216,169,78,.25)}.msg.ai{background:var(--elev);border:1px solid var(--border)}.msg .who{font:500 .65rem JetBrains Mono;color:var(--muted);margin-bottom:5px}.inputrow{display:flex;gap:8px}.inputrow input,.field,.select{width:100%;background:var(--elev);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--text)}.inputrow input:focus,.field:focus,.select:focus{outline:1px solid var(--gold)}
+.flash{min-height:190px;background:var(--elev);border:1px solid var(--border);border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;padding:24px}.flash strong{font:italic 2.2rem Fraunces}.translation{color:var(--teal);font-size:1.2rem;margin-top:8px}.review-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px}.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:18px}.chip{background:var(--elev);border:1px solid var(--border);border-radius:8px;padding:10px}.story{font:1.08rem/1.8 Fraunces}.story b{color:var(--gold)}.notice{padding:12px;border:1px solid rgba(51,214,192,.25);background:rgba(51,214,192,.06);border-radius:9px;color:var(--muted);font-size:.82rem;margin-top:12px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.statrow{display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding:10px 0}.mobile-nav{display:none}.hidden{display:none!important}
+footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:.78rem}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}.modal.show{display:flex}.modalbox{max-width:520px;width:100%;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:25px}.modalbox h2{font:400 1.8rem Fraunces;margin-bottom:10px}.steps{display:flex;gap:6px;margin:16px 0}.steps i{height:4px;flex:1;background:var(--elev);border-radius:5px}.steps i.on{background:var(--gold)}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.navlinks{display:none}.mobile-nav{position:fixed;display:flex;bottom:0;left:0;right:0;z-index:30;justify-content:space-around;background:rgba(23,23,40,.96);border-top:1px solid var(--border);padding:9px}.mobile-nav button{background:none;border:0;color:var(--muted);font-size:.7rem}.hero{padding-top:52px}}
+@media(max-width:500px){.grid{grid-template-columns:1fr 1fr}.wrap{padding:0 16px}.hero h1{font-size:2.5rem}.inputrow{flex-direction:column}.msg{max-width:92%}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Lingua<em>Mind</em> AI</div>
+  <div class="navlinks">
+    <button data-scroll="dashboard">Dashboard</button><button data-scroll="learn">Learn</button><button data-scroll="practice">Practice</button><button data-scroll="profile">Profile</button>
+  </div>
+  <span class="badge">V3 MVP</span>
+</nav>
+
+<header class="hero">
+<div class="wrap">
+  <div class="eyebrow">Your mistakes become your curriculum</div>
+  <h1>Learn a language through <i>real practice</i>, not endless drilling.</h1>
+  <p>LinguaMind turns your conversations, mistakes, vocabulary and speaking practice into one adaptive learning loop.</p>
+  <div class="actions"><button class="btn primary" id="startBtn">Start learning</button><button class="btn ghost" data-scroll="practice">Try AI practice</button></div>
+</div>
+</header>
+
+<div class="strip"><div class="wrap"><span><i class="dot"></i>Adaptive SRS</span><span><i class="dot"></i>AI tutor memory</span><span><i class="dot"></i>Personalized stories</span><span><i class="dot"></i>Speaking practice</span><span><i class="dot"></i>Daily goals & streaks</span></div></div>
+
+<section class="section" id="dashboard"><div class="wrap">
+<h2>Your learning dashboard</h2><p>Your current progress, goals and review workload.</p>
+<div class="grid">
+<div class="card"><div class="metric" id="streak">0</div><div class="label">Day streak 🔥</div></div>
+<div class="card"><div class="metric" id="xp">0</div><div class="label">XP</div></div>
+<div class="card"><div class="metric" id="words">0</div><div class="label">Words learned</div></div>
+<div class="card"><div class="metric" id="due">0</div><div class="label">Due today</div></div>
+</div>
+<div class="two" style="margin-top:12px">
+<div class="card"><div class="label">Today's goal</div><div style="display:flex;justify-content:space-between;margin-top:8px"><strong id="goalText">0 / 15 min</strong><span id="goalPct">0%</span></div><div class="progress"><i id="goalBar"></i></div></div>
+<div class="card"><div class="label">Learning profile</div><div class="statrow"><span>Target</span><strong id="targetLang">English</strong></div><div class="statrow"><span>Level</span><strong id="level">B1</strong></div><div class="statrow"><span>Goal</span><strong id="goal">Conversation</strong></div></div>
+</div>
+</div></section>
+
+<section class="section" id="learn"><div class="wrap">
+<h2>Daily lesson</h2><p>A guided 15-minute path instead of a toolbox of disconnected features.</p>
+<div class="card">
+<div class="statrow"><span>🧠 Vocabulary review</span><button class="btn ghost" data-tab="vocab">Practice</button></div>
+<div class="statrow"><span>💬 AI conversation</span><button class="btn ghost" data-tab="chat">Practice</button></div>
+<div class="statrow"><span>📖 Immersion story</span><button class="btn ghost" data-tab="story">Practice</button></div>
+<div class="statrow"><span>🎙️ Speaking</span><button class="btn ghost" data-tab="speak">Practice</button></div>
+</div>
+</div></section>
+
+<section class="section" id="practice"><div class="wrap">
+<h2>Practice lab</h2><p>Use your own mistakes and vocabulary to drive the next exercise.</p>
+<div class="tabs">
+<button class="tab active" data-panel="chat">💬 Chat Tutor</button><button class="tab" data-panel="vocab">📚 Vocabulary</button><button class="tab" data-panel="story">📖 Stories</button><button class="tab" data-panel="speak">🎙️ Speaking</button>
+</div>
+
+<div class="panel active" id="panel-chat"><div class="card">
+<div class="chat" id="chat"></div>
+<div class="inputrow"><input id="chatInput" placeholder="Try: I go market yesterday and buy apple."><button class="btn primary" id="send">Send</button></div>
+<div class="notice">Demo mode uses a local tutor fallback. Connect the Spring Boot /api/ai/tutor endpoint in <b>config.js</b> for real AI.</div>
+</div></div>
+
+<div class="panel" id="panel-vocab"><div class="card">
+<div class="grid" style="margin-bottom:15px"><div><div class="metric" id="vDue">0</div><div class="label">Due</div></div><div><div class="metric" id="vTotal">0</div><div class="label">Total</div></div><div><div class="metric" id="vMastered">0</div><div class="label">Mastered</div></div><div><div class="metric" id="vReview">0</div><div class="label">Reviews</div></div></div>
+<div class="flash" id="flash"><strong id="word">No cards yet</strong><span id="trans"></span><span class="label" id="flashHint">Click to reveal</span></div>
+<div class="review-actions"><button class="btn danger" data-grade="again">Again</button><button class="btn ghost" data-grade="hard">Hard</button><button class="btn ghost" data-grade="good">Good</button><button class="btn primary" data-grade="easy">Easy</button></div>
+<div class="list" id="vList"></div>
+</div></div>
+
+<div class="panel" id="panel-story"><div class="card">
+<div class="actions" style="margin-top:0"><select class="select" id="storyLevel" style="max-width:180px"><option>A1</option><option>A2</option><option selected>B1</option><option>B2</option><option>C1</option></select><button class="btn primary" id="storyBtn">Generate personalized story</button></div>
+<div class="story" id="story" style="margin-top:18px">Generate a story from your learned vocabulary.</div>
+</div></div>
+
+<div class="panel" id="panel-speak"><div class="card">
+<div class="label">Speaking practice</div><h3 id="phrase" style="font:400 1.5rem Fraunces;margin-top:8px">I went to the market yesterday.</h3>
+<div class="actions"><button class="btn ghost" id="nextPhrase">Next phrase</button><button class="btn primary" id="mic">🎙 Start speaking</button></div>
+<div id="speechResult" class="notice">This MVP scores transcript similarity, not phoneme-level pronunciation. Do not present this score as clinical/phonetic accuracy.</div>
+</div></div>
+</div></section>
+
+<section class="section" id="profile"><div class="wrap"><h2>Profile & settings</h2><p>These preferences drive personalization.</p>
+<div class="two"><div class="card">
+<label class="label">Target language</label><select class="select" id="targetSelect" style="margin:7px 0 14px"><option>English</option><option>Spanish</option><option>French</option><option>German</option><option>Japanese</option><option>Korean</option><option>Mandarin</option><option>Hindi</option></select>
+<label class="label">Current level</label><select class="select" id="levelSelect" style="margin:7px 0 14px"><option>A1</option><option>A2</option><option selected>B1</option><option>B2</option><option>C1</option><option>C2</option></select>
+<label class="label">Main goal</label><select class="select" id="goalSelect" style="margin:7px 0 14px"><option>Conversation</option><option>Career</option><option>Travel</option><option>Academic</option><option>Daily communication</option></select>
+<button class="btn primary" id="saveProfile">Save profile</button>
+</div>
+<div class="card"><div class="label">Privacy & data</div><p style="color:var(--muted);font-size:.85rem;margin-top:8px">V3 stores demo progress locally. Production mode should store user data server-side with authenticated APIs, deletion/export controls and encrypted secrets.</p><div class="actions"><button class="btn ghost" id="exportData">Export my data</button><button class="btn danger" id="resetData">Reset demo data</button></div></div>
+</div></div></section>
+
+<div class="mobile-nav"><button data-scroll="dashboard">🏠<br>Home</button><button data-scroll="learn">📚<br>Learn</button><button data-scroll="practice">💬<br>Practice</button><button data-scroll="profile">👤<br>Profile</button></div>
+
+<footer><div class="wrap">LinguaMind AI V3 · Production architecture target: React + Spring Boot + JWT + MySQL + AI service</div></footer>
+
+<div class="modal" id="onboarding"><div class="modalbox">
+<h2>Build your learning profile</h2><p style="color:var(--muted)">This demo saves the choices in your browser. Production should save them to your authenticated account.</p>
+<div class="steps"><i class="on"></i><i></i><i></i></div>
+<div id="onboardBody"></div>
+</div></div>
+
+<script>
+const KEY='linguamind_v3';
+const DEFAULT={profile:{target:'English',level:'B1',goal:'Conversation'},streak:1,xp:0,minutes:0,reviews:0,vocab:[
+ {word:'went',translation:'past tense of go',box:1,next:0,reviews:0},
+ {word:'bought',translation:'past tense of buy',box:1,next:0,reviews:0}
+]};
+let state=JSON.parse(localStorage.getItem(KEY)||'null')||structuredClone(DEFAULT);
+const save=()=>localStorage.setItem(KEY,JSON.stringify(state));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function render(){
+ const due=state.vocab.filter(v=>v.next<=Date.now()).length;
+ const mastered=state.vocab.filter(v=>v.box>=5).length;
+ document.getElementById('streak').textContent=state.streak;
+ document.getElementById('xp').textContent=state.xp;
+ document.getElementById('words').textContent=state.vocab.length;
+ document.getElementById('due').textContent=due;
+ document.getElementById('vDue').textContent=due;document.getElementById('vTotal').textContent=state.vocab.length;
+ document.getElementById('vMastered').textContent=mastered;document.getElementById('vReview').textContent=state.reviews;
+ document.getElementById('goalText').textContent=`${state.minutes} / 15 min`;
+ const pct=Math.min(100,Math.round(state.minutes/15*100));document.getElementById('goalPct').textContent=pct+'%';document.getElementById('goalBar').style.width=pct+'%';
+ document.getElementById('targetLang').textContent=state.profile.target;document.getElementById('level').textContent=state.profile.level;document.getElementById('goal').textContent=state.profile.goal;
+ document.getElementById('targetSelect').value=state.profile.target;document.getElementById('levelSelect').value=state.profile.level;document.getElementById('goalSelect').value=state.profile.goal;
+ const list=document.getElementById('vList');list.replaceChildren(...state.vocab.map(v=>{const d=document.createElement('div');d.className='chip';d.innerHTML=`<b>${esc(v.word)}</b><div class="label">box ${v.box}/5 · ${v.next<=Date.now()?'due':'scheduled'}</div>`;return d;}));
+ showCard();
+}
+function showCard(){
+ const due=state.vocab.filter(v=>v.next<=Date.now());const w=document.getElementById('word'),t=document.getElementById('trans'),h=document.getElementById('flashHint');
+ document.getElementById('flash').dataset.word=due[0]?.word||'';
+ w.textContent=due[0]?.word||'All caught up 🎉';t.textContent='';h.textContent=due[0]?'Click to reveal':'Nothing due right now';
+ document.getElementById('flash').classList.remove('revealed');
+}
+document.getElementById('flash').onclick=()=>{const word=document.getElementById('flash').dataset.word;const c=state.vocab.find(v=>v.word===word&&v.next<=Date.now());if(c){document.getElementById('trans').textContent=c.translation;document.getElementById('flashHint').textContent='Choose a rating';}};
+document.querySelectorAll('[data-grade]').forEach(b=>b.onclick=()=>{const c=state.vocab.find(v=>v.next<=Date.now());if(!c)return;const grade=b.dataset.grade;const map={again:[1,10*60*1000],hard:[Math.min(5,c.box),86400000],good:[Math.min(5,c.box+1),[86400000,259200000,604800000,1209600000,2592000000][Math.min(4,c.box)]],easy:[Math.min(5,c.box+2),[259200000,604800000,1209600000,2592000000,5184000000][Math.min(4,c.box)]]};c.box=map[grade][0];c.next=Date.now()+map[grade][1];c.reviews++;state.reviews++;state.xp+=grade==='easy'?8:5;state.minutes=Math.min(15,state.minutes+1);save();render();});
+function addVocab(word,translation){if(!word)return;if(!state.vocab.some(v=>v.word.toLowerCase()===word.toLowerCase())){state.vocab.push({word,translation,box:1,next:Date.now(),reviews:0});save();render();}}
+const chat=document.getElementById('chat');
+function msg(text,who){const d=document.createElement('div');d.className='msg '+(who==='You'?'user':'ai');const w=document.createElement('div');w.className='who';w.textContent=who;const p=document.createElement('div');p.textContent=text;d.append(w,p);chat.appendChild(d);chat.scrollTop=chat.scrollHeight;}
+msg('Say something in English — I will correct it and continue the conversation.','AI Tutor');
+function localTutor(text){
+ const rules=[[/\bgo market\b/i,['go to the market','Add the preposition “to” before a destination.','go','move from one place to another']],[/\bI go\b.*\byesterday\b/i,['I went','Use the past tense “went” with “yesterday”.','went','past tense of go']],[/\bbuy\b.*\byesterday\b/i,['bought','Use “bought” for the past tense of buy.','bought','past tense of buy']]];
+ for(const [re,[fix,why,w,t]] of rules)if(re.test(text))return {fix,why,w,t};
+ return null;
+}
+async function sendChat(){
+ const input=document.getElementById('chatInput'),text=input.value.trim();if(!text)return;input.value='';msg(text,'You');state.minutes=Math.min(15,state.minutes+1);state.xp+=10;save();render();
+ const result=localTutor(text);
+ if(result){msg(`Better: ${result.fix}\nWhy: ${result.why}\n\nTell me more about your day.`, 'AI Tutor');addVocab(result.w,result.t);}
+ else msg('Nice attempt. In production, your Spring Boot AI endpoint will analyze grammar, remember your weaknesses and extract useful vocabulary.', 'AI Tutor');
+}
+document.getElementById('send').onclick=sendChat;document.getElementById('chatInput').onkeydown=e=>{if(e.key==='Enter')sendChat();};
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));t.classList.add('active');document.getElementById('panel-'+t.dataset.panel).classList.add('active');});
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{const t=document.querySelector(`[data-panel="${b.dataset.tab}"]`);t?.click();document.getElementById('practice').scrollIntoView({behavior:'smooth'});});
+document.querySelectorAll('[data-scroll]').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.scroll).scrollIntoView({behavior:'smooth'}));
+document.getElementById('storyBtn').onclick=()=>{const body=document.getElementById('story'),level=document.getElementById('storyLevel').value,words=state.vocab.slice(0,8).map(v=>v.word);body.textContent=`${level} practice story: Yesterday I went to the market. I bought apples and walked home while thinking about the new language I am learning. ${words.length?'Target words: '+words.join(', ')+'.':''} In production, this section will call the authenticated story-generation endpoint and return structured, sanitized content.`;state.minutes=Math.min(15,state.minutes+2);state.xp+=10;save();render();};
+const phrases=['I went to the market yesterday.','She has already finished her homework.','We are learning a new language together.','He bought three apples and a loaf of bread.','They will travel to Japan next spring.'];let pi=0;
+document.getElementById('nextPhrase').onclick=()=>{pi=(pi+1)%phrases.length;document.getElementById('phrase').textContent=phrases[pi];document.getElementById('speechResult').textContent='Ready.';};
+document.getElementById('mic').onclick=()=>{const R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R){document.getElementById('speechResult').textContent='Speech recognition is unavailable. Use Chrome/Edge for this demo.';return}const r=new R();r.lang='en-US';r.interimResults=false;r.onresult=e=>{const said=e.results[0][0].transcript.toLowerCase(),target=phrases[pi].toLowerCase(),a=said.replace(/[^\w\s]/g,'').split(/\s+/),b=target.replace(/[^\w\s]/g,'').split(/\s+/),m=a.filter(x=>b.includes(x)).length;const score=Math.round(m/Math.max(a.length,b.length)*100);document.getElementById('speechResult').textContent=`You said: "${said}" · ${score}% word match. This is transcript similarity, not phoneme-level pronunciation scoring.`;state.xp+=5;state.minutes=Math.min(15,state.minutes+2);save();render()};r.onerror=()=>document.getElementById('speechResult').textContent='Could not access the microphone. Check browser permission.';r.start();};
+document.getElementById('saveProfile').onclick=()=>{state.profile.target=document.getElementById('targetSelect').value;state.profile.level=document.getElementById('levelSelect').value;state.profile.goal=document.getElementById('goalSelect').value;save();render();alert('Profile saved in this demo. Production will save it to your account.');};
+document.getElementById('exportData').onclick=()=>{const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='linguamind-data.json';a.click();URL.revokeObjectURL(a.href);};
+document.getElementById('resetData').onclick=()=>{if(confirm('Reset local demo data?')){state=structuredClone(DEFAULT);save();render();location.reload();}};
+function onboarding(){
+ if(localStorage.getItem('linguamind_onboarded'))return;
+ const modal=document.getElementById('onboarding'),body=document.getElementById('onboardBody');let step=0,vals={target:'English',level:'B1',goal:'Conversation'};
+ const renderStep=()=>{body.innerHTML='';const title=document.createElement('h3');title.textContent=['What do you want to learn?','What is your level?','What is your goal?'][step];body.appendChild(title);const sel=document.createElement('select');sel.className='select';sel.style.margin='12px 0';
+ const opts=step===0?['English','Spanish','French','German','Japanese','Korean','Mandarin','Hindi']:step===1?['A1','A2','B1','B2','C1','C2']:['Conversation','Career','Travel','Academic','Daily communication'];opts.forEach(o=>{const op=document.createElement('option');op.value=o;op.textContent=o;sel.appendChild(op)});sel.value=Object.values(vals)[step];body.appendChild(sel);const row=document.createElement('div');row.className='actions';const b=document.createElement('button');b.className='btn primary';b.textContent=step===2?'Finish':'Continue';b.onclick=()=>{Object.keys(vals)[step]=sel.value;if(step<2){step++;document.querySelectorAll('.steps i').forEach((x,i)=>x.classList.toggle('on',i<=step));renderStep()}else{state.profile=vals;save();localStorage.setItem('linguamind_onboarded','1');modal.classList.remove('show');render()}};row.appendChild(b);body.appendChild(row)};modal.classList.add('show');renderStep();
+}
+document.getElementById('startBtn').onclick=onboarding;
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+2026.08.15 22:01:44 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.08.15 22:01:44 INFO  no build target found for C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java. Using fallback presentation compiler.
+2026.08.15 22:01:45 INFO  no build target found for C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java. Using fallback presentation compiler.
+2026.08.15 22:01:45 WARN  no build tool detected in workspace 'C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.08.15 22:01:45 WARN  Build server is not auto-connectable.
+2026.08.15 22:01:46 WARN  no build target for: C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java
+2026.08.15 22:01:46 INFO  no build target found for C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java. Using fallback presentation compiler.
+2026.08.15 22:01:46 WARN  Running javac-semanticdb failed for file:///C:/Users/Medhavi%20Dubey/OneDrive/Desktop/LinguaMindAI-v3-market-ready-starter/LinguaMindAI-v3/backend/src/main/java/com/linguamind/api/web/AiController.java. Output:
+
+2026.08.15 22:01:53 INFO  no build target found for C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java. Using fallback presentation compiler.
+2026.08.15 22:02:51 INFO  no build target found for C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java. Using fallback presentation compiler.
+2026.08.15 22:02:53 INFO  no build target found for C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java. Using fallback presentation compiler.
+Aug 15, 2026 10:03:07 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.08.15 22:03:09 INFO  no build target found for C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java. Using fallback presentation compiler.
+2026.08.15 22:05:51 INFO  no build target found for C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java. Using fallback presentation compiler.
+2026.08.15 22:05:51 INFO  no build target found for C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java. Using fallback presentation compiler.
+2026.08.15 22:05:51 INFO  no build target found for C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java. Using fallback presentation compiler.
+2026.08.15 22:05:58 INFO  no build target found for C:\Users\Medhavi Dubey\OneDrive\Desktop\LinguaMindAI-v3-market-ready-starter\LinguaMindAI-v3\backend\src\main\java\com\linguamind\api\web\AiController.java. Using fallback presentation compiler.
+Aug 15, 2026 10:31:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.08.15 22:36:30 INFO  Shutting down server
+2026.08.15 22:36:30 INFO  Memory monitor stopped
+2026.08.15 22:36:30 INFO  shutting down Metals
+2026.08.15 22:36:30 INFO  Exiting server
